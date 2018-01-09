@@ -1,0 +1,17 @@
+
+<div class="container">
+    <input type="text" class="form-control" placeholder="Search By Name or Subject" [(ngModel)]="query"><br>
+  </div>
+  <div id="mainbox">
+      <div class="card" *ngFor="let contact of contacts | search:'name,subject':query">
+          <button class="btn btn-danger pull-right" (click)="deleteTask(contact._id)" >Delete This user</button> 
+        <img src="http://media.npr.org/assets/news/2009/10/27/facebook1_sq-17f6f5e06d5742d8c53576f7c13d5cf7158202a9.jpg?s=16" alt="" /><br>
+        
+        <h1>{{contact.name}}</h1><br>
+        <p>Email:{{contact.email}}</p><br>
+        <p>Sub:{{contact.subject}}</p>
+        <p>{{contact.message}}.</p>
+      </div>  
+            </div>
+     
+      

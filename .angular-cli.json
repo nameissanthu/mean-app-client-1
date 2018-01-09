@@ -6,7 +6,7 @@
   "apps": [
     {
       "root": "src",
-      "outDir": "dist",
+      "outDir": "../public",
       "assets": [
         "assets",
         "favicon.ico"
@@ -20,8 +20,14 @@
       "prefix": "app",
       "styles": [
         "styles.css"
+        
       ],
-      "scripts": [],
+      "scripts": [
+        "../node_modules/jquery/dist/jquery.js",
+        "../node_modules/hammerjs/hammer.js"
+        
+
+      ],
       "environmentSource": "environments/environment.ts",
       "environments": {
         "dev": "environments/environment.ts",

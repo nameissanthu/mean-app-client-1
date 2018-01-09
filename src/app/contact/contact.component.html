@@ -1,0 +1,49 @@
+<h1> Contact Form</h1>
+<form #f="ngForm"  class="cf">
+  <div class="half left cf">
+    <input  
+     type="text" id="input-name"  
+     [(ngModel)]="name" name="name"
+     class="form-control" #namee1="ngModel"
+     placeholder="Enter Name" minlength="10" required>
+     <div class="alert alert-danger" *ngIf="namee1.touched && namee1.invalid">
+      <div *ngIf="namee1.errors.required">Name is required</div>
+      <div *ngIf="namee1.errors.minlength">Name should be 10 or Higher</div>
+     </div>
+
+     
+    
+    <input type="email" id="email"
+    [(ngModel)]="email"  name="email" #email1="ngModel"
+    class="form-control"
+    placeholder="Enter Email"  minlength="10" required>
+    <div class="alert alert-danger" *ngIf="email1.touched && email1.invalid">
+        <div *ngIf="email1.errors.required">Email is required</div>
+      <div *ngIf="email1.errors.minlength">Email should be 10 or Higher</div>
+     </div>
+    
+    <input type="text" id="input-subject" 
+    [(ngModel)]="subject"  name="subject"
+    #sub="ngModel"  
+    class="form-control"
+    placeholder="Enter Subject" minlength="10" required>
+    <div class="alert alert-danger" *ngIf="sub.touched && sub.invalid">
+        <div *ngIf="sub.errors.required">Subject is required</div>
+      <div *ngIf="sub.errors.minlength">Subject should be 10 or Higher</div>
+     </div>
+    </div>
+  <div class="half right cf">
+    <textarea name="message" 
+    type="text" id="input-message"   [(ngModel)]="message"  name="message"
+    class="form-control" #msg="ngModel"
+    minlength="20" required
+    placeholder="Enter Subject"></textarea>
+    <div class="alert alert-danger" *ngIf="msg.touched && msg.invalid">
+        <div *ngIf="msg.errors.required">Message is required</div>
+      <div *ngIf="msg.errors.minlength">Message should be 20 or Higher</div>
+     </div>
+  </div>  
+  <input type="submit" value="Submit" [disabled]="!f.valid" (click)="addTask($event)"  id="input-submit">
+  
+</form>
+

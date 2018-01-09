@@ -1,0 +1,20 @@
+<ngx-carousel
+[inputs]="carouselBanner"
+[moveToSlide]="1"
+(onMove)="onmoveFn($event)">
+
+    <ngx-item NgxCarouselItem class="bannerStyle">
+        <img src="https://cdn.worldvectorlogo.com/logos/angular-3.svg" class="img-responsive" height="500" width="300">
+    </ngx-item>
+
+    <ngx-item NgxCarouselItem class="bannerStyle">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/7/7e/Node.js_logo_2015.svg" class="img-responsive" height="500" width="300">
+    </ngx-item>
+
+    <ngx-item NgxCarouselItem class="bannerStyle">
+        <img src="https://mlab.com/company/brand/img/downloads/mLab-logo-onlight.png" class="img-responsive" height="500" width="300">
+    </ngx-item>
+
+    <button NgxCarouselPrev class='leftRs'>&lt;</button>
+    <button NgxCarouselNext class='rightRs'>&gt;</button>
+</ngx-carousel>

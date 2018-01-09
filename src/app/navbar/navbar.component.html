@@ -1,0 +1,42 @@
+  
+      <style>
+      /* NOTE: The styles were added inline because Prefixfree needs access to your styles and they must be inlined if they are on local disk! */
+      @import url(https://fonts.googleapis.com/css?family=Open+Sans);
+    </style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+  <div class="navbar1">
+  <ul>
+    <li>
+      <a href="#">Home</a>
+    </li>
+    <li  *ngIf="!authservice.loggedIn()">
+      <a routerLink="login">Login</a>
+    </li>
+    <li  *ngIf="!authservice.loggedIn()">
+      <a routerLink="register">Register</a>
+    </li>
+    
+        <li  *ngIf="authservice.loggedIn()">
+        <a href="#" routerLink="profile">Profile</a>
+      </li>
+      <li  *ngIf="authservice.loggedIn()">
+          <a href="#" routerLink="dashbord">Dashboard</a>
+        </li>
+        <li  *ngIf="authservice.loggedIn()">
+          <a href="#" routerLink="contact">ContactUs</a>
+        </li>
+        <li  *ngIf="authservice.loggedIn()">
+            <a href="#" (click)="onLogout()">LOGOUT</a>
+          </li>
+         
+          
+  </ul>
+  </div>
+ 
+
+     
+   
+
+    
+
+
